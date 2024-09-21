@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Love</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            animation: backgroundChange 8s infinite alternate;
+            overflow: hidden;
+            position: relative;
+        }
+
+        @keyframes backgroundChange {
+            0% {
+                background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            }
+            100% {
+                background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+            }
+        }
+
+        .card {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 600px;
+            animation: fadeIn 1.5s ease-in-out;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #ff6f61;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #333;
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .additional-wishes {
+            font-size: 1.1em;
+            margin-top: 20px;
+            color: #666;
+        }
+
+        .cake {
+            margin: 20px 0;
+            cursor: pointer;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        .cake img {
+            width: 200px;
+            height: auto;
+        }
+
+        .cut-cake {
+            display:none;
+            position: absolute;
+            margin:20px 0;
+            buttom:20px;
+            right:20px;
+            animation: fadeInCut 1s ease;
+        }
+
+        @keyframes fadeInCut {
+            0% {
+                opacity: 0;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+        }
+
+        .hearts {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .heart {
+            color: #ff4081;
+            font-size: 3em;
+            animation: pulse 1s infinite;
+            margin: 0 5px;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .balloon {
+            position: absolute;
+            width: 60px;
+            height: 80px;
+            background-color: #ff6f61;
+            border-radius: 50%;
+            animation: floatUp 5s infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-800px);
+            }
+        }
+
+        .balloon:nth-child(2) {
+            left: 15%;
+            width: 80px;
+            height: 100px;
+            background-color: #ff9a9e;
+            animation-duration: 6s;
+        }
+
+        .balloon:nth-child(3) {
+            left: 30%;
+            width: 50px;
+            height: 70px;
+            background-color: #fad0c4;
+            animation-duration: 4.5s;
+        }
+
+        .balloon:nth-child(4) {
+            left: 70%;
+            background-color: #ff6f61;
+            animation-duration: 6s;
+        }
+
+        .balloon:nth-child(5) {
+            left: 80%;
+            background-color: #fbc2eb;
+            animation-duration: 7s;
+        }
+
+        .pictures {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .pictures img {
+            width: 200px;
+            height: 200px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s;
+            margin: 10px;
+        }
+
+        .pictures img:hover {
+            transform: scale(1.1);
+        }
+
+        button {
+            padding: 12px 24px;
+            background-color: #ff6f61;
+            color: white;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff4c3b;
+            transform: scale(1.1);
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: yellow;
+            border-radius: 50%;
+            animation: sparkleBlast 1.5s ease-out forwards;
+        }
+
+        @keyframes sparkleBlast {
+            10% {
+                opacity: 1;
+                transform: translate(0, 0);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(var(--x), var(--y));
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Happy Birthday, My Love!</h1>
+        <p>You bring so much joy and love into my life. Here's to many more years of happiness together!</p>
+
+        <div class="additional-wishes">
+            <p>May your day be filled with love, laughter, and all your favorite things!</p>
+            <p>You deserve all the happiness in the world. I love you more every day!</p>
+            <p>Let's make this birthday unforgettable, just like you!</p>
+        </div>
+
+        <button onclick="changeTheme()">Change Theme</button>
+
+        <div class="hearts">
+            <div class="heart">❤️</div>
+            <div class="heart">❤️</div>
+            <div class="heart">❤️</div>
+            <div class="heart">❤️</div>
+        </div>
+    </div>
+
+    <div class="cake" onclick="cutCake()">
+        <img src="cake.jpg" alt="Birthday Cake">
+        <img src="image1_0.jpg" alt="Cut Cake" class="cut-cake">
+    </div>
+
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+
+    <div class="pictures">
+        <img src="IMG-20240906-WA0002.jpg" alt="Picture 2">
+        <img src="IMG-20240906-WA0003.jpg" alt="Picture 3">
+        <img src="IMG-20240906-WA0004.jpg" alt="Picture 1">
+        <img src="WhatsApp Image 2024-09-14 at 23.20.35_9f41878f.jpg" alt="Picture 4">
+    </div>
+
+    <audio id="birthdaySong" autoplay>
+        <source src="happy_birthday_to_you_manisha.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        function changeTheme() {
+            const colors = [
+                ['#fbc2eb', '#a6c1ee'], 
+                ['#fbc2eb', '#fad0c4'], 
+                ['#ff9a9e', '#fad0c4'], 
+                ['#ffecd2', '#fcb69f'],
+                ['#a18cd1', '#fbc2eb']
+            ];
+            const random = Math.floor(Math.random() * colors.length);
+            document.body.style.background = `linear-gradient(135deg, ${colors[random][0]} 0%, ${colors[random][1]} 100%)`;
+        }
+
+        function cutCake() {
+            const cake = document.querySelector('.cake img');
+            const cutCake = document.querySelector('.cut-cake');
+            cake.style.display = 'none';
+            cutCake.style.display = 'block';
+            triggerSparkleBlast(); 
+        }
+        function triggerSparkleBlast() {
+            const numberOfSparkles = 100;
+            for (let i = 0; i < numberOfSparkles; i++) {
+                const randomX = Math.random() * window.innerWidth;
+                const randomY = Math.random() * window.innerHeight;
+                createBlastSparkle(randomX, randomY);
+            }
+        }
+        function createBlastSparkle(x, y) {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.left = `${x}px`;
+            sparkle.style.top = `${y}px`;
+
+            const angle = Math.random() * 360;
+            const distance = Math.random() * 300;
+            const offsetX = Math.cos(angle) * distance;
+            const offsetY = Math.sin(angle) * distance;
+
+            sparkle.style.setProperty('--x', `${offsetX}px`);
+            sparkle.style.setProperty('--y', `${offsetY}px`);
+            sparkle.style.animation = 'sparkleBlast 1.5s ease-out forwards';
+            document.body.appendChild(sparkle);
+
+            setTimeout(() => sparkle.remove(), 20000);
+        }
+    </script>
+</body>
+</html>
